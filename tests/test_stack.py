@@ -24,7 +24,7 @@ class TestNodeAndStack(unittest.TestCase):
         self.assertEqual(stack_for_test.top.next_node.next_node.data, "data1")
         self.assertEqual(stack_for_test.top.next_node.next_node.next_node, None)
 
-        self.assertEqual(stack_for_test.pop(),"data3")
+        self.assertEqual(stack_for_test.pop(), "data3")
 
 
 if __name__ == '__main__':
