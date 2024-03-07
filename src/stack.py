@@ -41,3 +41,11 @@ class Stack:
             popped_node = self.top
             self.top = self.top.next_node
             return popped_node.data
+
+    def __str__(self):
+        node = self.top
+        string = ""
+        while node is not None:
+            string += node.data + "\n"
+            node = node.next_node
+        return string
