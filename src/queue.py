@@ -30,13 +30,12 @@ class Queue:
         if self.head is None:
             self.head = Node(data, None)
             self.tail = self.head
-            self.queue = self.queue + self.tail.data + "\n"
+            self.queue += self.tail.data
         else:
             self.tail_temporary = Node(data, None)
             self.tail.next_node = self.tail_temporary
             self.tail = self.tail_temporary
-            self.queue = self.queue + self.tail.data + "\n"
-
+            self.queue += "\n" + self.tail.data
 
 
     def dequeue(self):
