@@ -21,6 +21,10 @@ class TestNodeAndStack(unittest.TestCase):
     def test_Queue(self):
         self.assertEqual(queue_for_test.head.data, "data1")
         self.assertEqual(queue_for_test.tail.data, "data3")
+        self.assertEqual(queue_for_test.dequeue(), "data1")
+        self.assertEqual(queue_for_test.dequeue(), "data2")
+        self.assertEqual(queue_for_test.dequeue(), "data3")
+        self.assertEqual(queue_for_test.dequeue(), None)
 
     def test_Queue_str(self):
         self.assertEqual(str(queue_for_test), "data1\ndata2\ndata3")
