@@ -28,7 +28,7 @@ class Queue:
         :param data: данные, которые будут добавлены в очередь
         """
         if self.head is None:
-            self.head = Node(data, None)
+            self.head = Node(data, self.tail)
             self.tail = self.head
             self.queue += self.tail.data
         else:
@@ -37,14 +37,18 @@ class Queue:
             self.tail = self.tail_temporary
             self.queue += "\n" + self.tail.data
 
-
     def dequeue(self):
         """
         Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
 
         :return: данные удаленного элемента
         """
-        pass
+        if self.head is None:
+            return None
+        else:
+            del_node = self.head
+            self.head = del_node.next_node
+        return del_node.data
 
     def __str__(self):
         """Магический метод для строкового представления объекта"""
