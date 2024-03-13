@@ -2,8 +2,8 @@
 import unittest
 from src.stack import Node, Stack
 
-node_for_test1 = Node("data1")
-node_for_test2 = Node("data2", node_for_test1)
+node_for_test1 = Node("data1n")
+node_for_test2 = Node("data2n", node_for_test1)
 
 stack_for_test = Stack()
 stack_for_test.push('data1')
@@ -14,7 +14,7 @@ stack_for_test.push('data3')
 class TestNodeAndStack(unittest.TestCase):
 
     def test_Node(self):
-        self.assertEqual(node_for_test1.data, "data1")
+        self.assertEqual(node_for_test1.data, "data1n")
         self.assertEqual(node_for_test1.next_node, None)
         self.assertEqual(node_for_test2.next_node, node_for_test1)
 
@@ -25,6 +25,9 @@ class TestNodeAndStack(unittest.TestCase):
         self.assertEqual(stack_for_test.top.next_node.next_node.next_node, None)
 
         self.assertEqual(stack_for_test.pop(), "data3")
+
+    def test_Stack_str(self):
+        self.assertEqual(str(stack_for_test), "data2\ndata1\n")
 
 
 if __name__ == '__main__':
